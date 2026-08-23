@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../component/common_App_Bar/Common_App_Bar.dart';
 import '../../../../component/other_widgets/common_loader.dart';
 import '../../../../component/screen/error_screen.dart';
 import '../../../../component/text/common_text.dart';
@@ -17,17 +18,13 @@ class PrivacyPolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       /// App bar
-      appBar: AppBar(
-        title: const CommonText(
-          text: AppString.privacyPolicy,
-          fontSize: 20,
-          fontWeight: .w600,
-        ),
-      ),
+      appBar: const CommonAppBar(title: AppString.privacyPolicy, showBackButton: true),
 
       /// Body
       body: GetBuilder<PrivacyPolicyController>(
+
         builder: (controller) => switch (controller.status) {
           /// Loading
           Status.loading => const CommonLoader(),

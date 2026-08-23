@@ -1,9 +1,12 @@
+import 'package:untitled/utils/enum/enum.dart';
+
 class AppString {
   AppString._();
 
   static const String dataEmpty = 'Data Empty';
   static const String noInternet = 'No Internet';
   static const String checkInternet = 'Check Internet';
+
   static const String back = 'Back';
   static const String youSureWantToLogout = 'You sure want to logout';
   static const String no = 'No';
@@ -11,6 +14,7 @@ class AppString {
   static const String areYouSure = 'Are you sure';
   static const String enterYouPassword = 'Enter you password';
   static const String cancel = 'Cancel';
+
   static const String done = 'Done';
   static const String deleteDetails =
       'All your changes will be deleted and you will no longer be able to access them.';
@@ -72,5 +76,33 @@ class AppString {
       'Password must be 8 characters & contain both alphabets and numerics';
   static const String thePasswordDoesNotMatch = 'The password does not match';
   static const String startServer = 'Please, start the Server';
-  static const String unknownError = 'Unknown Error';
+
+  // ====================================== ** ==============================
+
+  static const String name = "Huzaifa Sani";
+  static const String language = 'Language';
+  static const String gmail = 'huzaifa2051@gmail.com';
+
+  static const String chooseYourPreferredLanguage = 'Choose your preferred language.';
+
+  static const String accountSetting = 'Account Setting';
+  static const String manageYourAccountInformation = 'Manage your account information.';
+
+  static const String helpAndFaq = 'Help & FAQ';
+  static const String howToOrderPayCancel = 'How to order, pay, cancel.';
+
+  static const String contactSupport = 'Contact Support';
+  static const String getQuickAssistanceFromOurSupportTeam = 'Get quick assistance from our support team.';
+
+  static const String passwordChange = 'Password Change';
+  static const String changeYourPasswordAndKeepYourAccountSafe = 'Change your password and keep your account safe.';
+
+  static const String termsAndConditions = 'Terms & Conditions';
+  static const String viewOurTermsPoliciesAndServiceGuidelines = 'View our terms, policies, and service guidelines.';
+
+  static const String learnHowWeCollectUseAndProtectYourInformation = 'Learn how we collect, use, and protect your information.';
+
+
+
+
 }

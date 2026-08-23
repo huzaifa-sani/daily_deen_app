@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:untitled/component/common_App_Bar/Common_App_Bar.dart';
 
 import '../../../../component/other_widgets/common_loader.dart';
 import '../../../../component/screen/error_screen.dart';
@@ -17,16 +18,9 @@ class TermsOfServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /// AppBar
-      appBar: AppBar(
-        title: const CommonText(
-          text: AppString.termsOfServices,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
 
-      /// Body
+      appBar: CommonAppBar(title: AppString.termsOfServices),
+
       body: GetBuilder<TermsOfServicesController>(
         builder: (controller) => switch (controller.status) {
           /// Loading
@@ -40,6 +34,7 @@ class TermsOfServicesScreen extends StatelessWidget {
             padding: .symmetric(vertical: 24.h, horizontal: 20.w),
             child: Html(data: controller.data.content),
           ),
+
         },
       ),
     );

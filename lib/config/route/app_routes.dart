@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:untitled/features/setting/presentation/screen/contact_support.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -18,6 +19,7 @@ import '../../features/setting/presentation/screen/terms_of_services_screen.dart
 import '../../features/splash/splash_screen.dart';
 
 class AppRoutes {
+
   static const String test = '/test_screen.dart';
   static const String splash = '/';
   static const String onboarding = '/onboarding_screen.dart';
@@ -36,8 +38,10 @@ class AppRoutes {
   static const String privacyPolicy = '/privacy_policy_screen.dart';
   static const String termsOfServices = '/terms_of_services_screen.dart';
   static const String setting = '/setting_screen.dart';
+  static const String contact_support = '/contact_support.dart';
 
   static List<GetPage<String>> routes = [
+
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
     GetPage(name: signUp, page: () => SignUpScreen()),
@@ -50,10 +54,12 @@ class AppRoutes {
     GetPage(name: notifications, page: () => const NotificationScreen()),
     GetPage(name: chat, page: () => const ChatListScreen()),
     GetPage(name: message, page: () => const MessageScreen()),
+    GetPage(name: contact_support, page: () => ContactSupport()),
     GetPage(name: profile, page: () => const ProfileScreen()),
     GetPage(name: editProfile, page: () => EditProfile()),
     GetPage(name: privacyPolicy, page: () => const PrivacyPolicyScreen()),
     GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
+
   ];
 }

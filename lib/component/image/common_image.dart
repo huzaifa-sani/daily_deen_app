@@ -7,6 +7,7 @@ import '../../utils/constants/app_images.dart';
 import '../../utils/log/error_log.dart';
 
 class CommonImage extends StatelessWidget {
+
   final String imageSrc;
   final String defaultImage;
   final Color? imageColor;

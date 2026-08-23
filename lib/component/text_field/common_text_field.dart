@@ -67,8 +67,8 @@ class CommonTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => TextFormField(
-        autovalidateMode: .onUnfocus,
+          () => TextFormField(
+        autovalidateMode: AutovalidateMode.onUnfocus,
         keyboardType: keyboardType,
         controller: controller,
         obscureText: isPassword ? !obscureText.value : obscureText.value,
@@ -91,9 +91,8 @@ class CommonTextField extends StatelessWidget {
           ),
           prefixIcon: prefixIcon,
           fillColor: fillColor,
-
           counterText: '',
-          contentPadding: .symmetric(
+          contentPadding: EdgeInsets.symmetric(
             horizontal: paddingHorizontal.w,
             vertical: paddingVertical.h,
           ),
@@ -106,7 +105,7 @@ class CommonTextField extends StatelessWidget {
           labelText: labelText,
           hintStyle: GoogleFonts.roboto(fontSize: 14, color: hintTextColor),
           labelStyle: GoogleFonts.roboto(fontSize: 14, color: labelTextColor),
-          prefix: CommonText(text: prefixText ?? '', fontWeight: .w400),
+          prefix: CommonText(text: prefixText ?? '', fontWeight: FontWeight.w400),
           suffixIcon: isPassword ? _buildPasswordSuffixIcon() : suffixIcon,
         ),
       ),
@@ -115,7 +114,7 @@ class CommonTextField extends StatelessWidget {
 
   OutlineInputBorder _buildBorder() {
     return OutlineInputBorder(
-      borderRadius: .circular(borderRadius.r),
+      borderRadius: BorderRadius.circular(borderRadius.r),
       borderSide: BorderSide(
         color: borderColor == AppColors.transparent
             ? Colors.grey.withValues(alpha: 0.3)
@@ -128,9 +127,9 @@ class CommonTextField extends StatelessWidget {
     return GestureDetector(
       onTap: toggle,
       child: Padding(
-        padding: .only(right: 10.w),
+        padding: EdgeInsets.only(right: 10.w),
         child: Obx(
-          () => Icon(
+              () => Icon(
             obscureText.value
                 ? Icons.visibility_off_outlined
                 : Icons.visibility_outlined,
