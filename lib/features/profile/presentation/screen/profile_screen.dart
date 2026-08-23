@@ -15,7 +15,10 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: const CommonAppBar(title: "Profile", showBackButton: true),
+      appBar: const CommonAppBar(
+          title: AppString.profile,
+          showBackButton: true
+      ),
 
       body: Column(
 
@@ -37,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             icon: Icons.language,
             title: AppString.language,
             subtitle: AppString.chooseYourPreferredLanguage,
-            onTap: () => Get.toNamed('/language'),
+            onTap: () => Get.toNamed(AppRoutes.language),
           ),
 
 
@@ -47,16 +50,7 @@ class ProfileScreen extends StatelessWidget {
             icon: Icons.person_outline,
             title: AppString.accountSetting,
             subtitle: AppString.manageYourAccountInformation,
-            onTap: () => Get.toNamed('/account-setting'),
-          ),
-
-          15.height,
-
-          CommonSettingsTile(
-            icon: Icons.help_outline,
-            title: AppString.helpAndFaq,
-            subtitle: AppString.howToOrderPayCancel,
-            onTap: () => Get.toNamed('/help-faq'),
+            onTap: () => Get.toNamed(AppRoutes.account_Setting),
           ),
 
           15.height,

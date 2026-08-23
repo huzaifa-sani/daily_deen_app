@@ -83,6 +83,11 @@ class AppString {
   static const String language = 'Language';
   static const String gmail = 'huzaifa2051@gmail.com';
 
+  static const String personalInformation = 'Personal Information';
+  static const String viewAndUpdateYourPersonalDetails = 'View and update your personal details.';
+
+  static const String permanentlyDeleteYourAccountAndAssociatedData = 'Permanently delete your account and associated data.';
+
   static const String chooseYourPreferredLanguage = 'Choose your preferred language.';
 
   static const String accountSetting = 'Account Setting';
