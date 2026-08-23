@@ -1,3 +1,4 @@
+import 'package:get_storage/get_storage.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,6 +7,7 @@ import 'app.dart';
 import 'config/dependency/dependency_injection.dart';
 import 'services/socket/socket_service.dart';
 import 'services/storage/storage_services.dart';
+
 
 Future<void> main() async {
   runZonedGuarded(() async {
@@ -21,6 +23,7 @@ Future<void> main() async {
 Future<void> init() async {
   try {
     final dI = DependencyInjection();
+    await GetStorage.init();
     dI.dependencies();
     await Future.wait([
       SystemChrome.setPreferredOrientations([.portraitUp, .portraitDown]),
