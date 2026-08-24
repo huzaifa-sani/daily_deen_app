@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/constants/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
+
   const CommonAppBar({
     super.key,
     required this.title,

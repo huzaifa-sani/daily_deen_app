@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:untitled/component/common_App_Bar/Common_App_Bar.dart';
 
 import '../../../../../../config/route/app_routes.dart';
 import '../../../../../../utils/constants/app_string.dart';
 import '../../../../../../utils/enum/enum.dart';
 
-import '../../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../../component/other_widgets/common_loader.dart';
 import '../../../../component/screen/error_screen.dart';
-import '../../../../component/text/common_text.dart';
 import '../../../../component/text_field/common_text_field.dart';
 
 import '../../data/model/chat_list_model.dart';
@@ -23,14 +22,7 @@ class ChatListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// App bar
-      appBar: AppBar(
-        centerTitle: true,
-        title: const CommonText(
-          text: AppString.inbox,
-          fontWeight: .w600,
-          fontSize: 24,
-        ),
-      ),
+      appBar: const CommonAppBar(title: AppString.inbox,showBackButton: false,),
 
       /// Body
       body: GetBuilder<ChatController>(
@@ -85,8 +77,6 @@ class ChatListScreen extends StatelessWidget {
         },
       ),
 
-      /// Bottom nav
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 2),
     );
   }
 }

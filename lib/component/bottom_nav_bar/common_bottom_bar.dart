@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import '../../../config/route/app_routes.dart';
 import '../../../utils/constants/app_colors.dart';
-import '../../../utils/log/app_log.dart';
+
+final List<String> _titles = [
+  'Tasbih',
+  'Learn',
+  'Du’a',
+  'Habit',
+];
 
 final List<Widget> _unselectedIcons = [
   const Icon(Icons.settings_outlined, color: AppColors.black),
@@ -20,67 +24,58 @@ final List<Widget> _selectedIcons = [
 ];
 
 class CommonBottomNavBar extends StatelessWidget {
-  const CommonBottomNavBar({super.key, required this.currentIndex});
+  const CommonBottomNavBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
   final int currentIndex;
+  final Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      alignment: .center,
-      padding: .all(12.sp),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: AppColors.blueLight,
-        borderRadius: .only(
+        borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20.r),
           topRight: Radius.circular(20.r),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: .spaceBetween,
-        children: List.generate(_unselectedIcons.length, (index) {
-          return InkWell(
-            onTap: () => onTap(index),
-            child: Container(
-              margin: .all(12.sp),
-              child: Column(
-                children: [
-                  index == currentIndex
-                      ? _selectedIcons[index]
-                      : _unselectedIcons[index],
-                ],
+      child: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(_unselectedIcons.length, (index) {
+            final isSelected = index == currentIndex;
+            return InkWell(
+              onTap: () => onTap(index),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // আইকন
+                    isSelected ? _selectedIcons[index] : _unselectedIcons[index],
+                    SizedBox(height: 4.h),
+                    // আইকনের নিচের টাইটেল বা টেক্সট
+                    Text(
+                      _titles[index],
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                        color: isSelected ? AppColors.primaryColor : AppColors.black,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
-  }
-
-  Future<void> onTap(int index) async {
-    appLog(currentIndex, source: 'common bottom bar');
-
-    if (index == currentIndex) return;
-    switch (index) {
-      case 0:
-        Get.toNamed(AppRoutes.setting);
-        break;
-
-      case 1:
-        Get.toNamed(AppRoutes.notifications);
-        break;
-
-      case 2:
-        Get.toNamed(AppRoutes.chat);
-        break;
-
-      case 3:
-        Get.toNamed(AppRoutes.profile);
-        break;
-
-      default:
-        appLog('Invalid bottom bar index: $index');
-    }
   }
 }

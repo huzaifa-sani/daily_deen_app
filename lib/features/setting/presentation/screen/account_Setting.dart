@@ -8,7 +8,8 @@ import '../../../../../../utils/constants/app_string.dart';
 import '../../../profile/presentation/widgets/common_Settings_tile.dart';
 
 class AccountSetting extends StatelessWidget {
-  AccountSetting({super.key});
+   AccountSetting({super.key});
+
 
   final TextEditingController issueTitleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
