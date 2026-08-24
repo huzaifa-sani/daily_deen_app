@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
 
       appBar: const CommonAppBar(
           title: AppString.profile,
-          showBackButton: true
+          showBackButton: false
       ),
 
       body: Column(
