@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:untitled/features/profile/presentation/screen/language.dart';
 import 'package:untitled/features/setting/presentation/screen/account_Setting.dart';
 import 'package:untitled/features/setting/presentation/screen/contact_support.dart';
-import '../../component/dash_board_Screen/screen/dash_board_Screen.dart';
+import '../../component/dash_board/screen/dash_board_Screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
