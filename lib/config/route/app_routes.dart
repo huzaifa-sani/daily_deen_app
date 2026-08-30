@@ -24,7 +24,6 @@ class AppRoutes {
   static const String splash = '/';
   static const String dashboard = '/dash_board_Screen.dart';
   static const String onboarding = '/onboarding_screen.dart';
-
   static const String signUp = '/sign_up_screen.dart';
   static const String verifyUser = '/verify_user.dart';
   static const String signIn = '/sign_in_screen.dart';
@@ -48,7 +47,6 @@ class AppRoutes {
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: dashboard, page: () => DashboardScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
-
     GetPage(name: signUp, page: () => SignUpScreen()),
     GetPage(name: language, page: () => Language()),
     GetPage(name: verifyUser, page: () => const VerifyUser()),

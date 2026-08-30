@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../../component/dash_board/controller/dashboard_controller.dart';
 import '../../features/auth/change_password/presentation/controller/change_password_controller.dart';
 import '../../features/auth/forgot password/presentation/controller/forget_password_controller.dart';
@@ -15,6 +14,7 @@ import '../../features/setting/presentation/controller/terms_of_services_control
 class DependencyInjection extends Bindings {
   @override
   void dependencies() {
+
     Get.lazyPut(() => DashboardController(), fenix: true);
     Get.lazyPut(() => SignUpController(), fenix: true);
     Get.lazyPut(() => SignInController(), fenix: true);
@@ -26,5 +26,7 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => SettingController(), fenix: true);
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
+    Get.lazyPut(() => TermsOfServicesController(), fenix: true);
+
   }
 }
