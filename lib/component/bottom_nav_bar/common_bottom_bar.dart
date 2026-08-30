@@ -57,10 +57,8 @@ class CommonBottomNavBar extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // আইকন
                     isSelected ? _selectedIcons[index] : _unselectedIcons[index],
                     SizedBox(height: 4.h),
-                    // আইকনের নিচের টাইটেল বা টেক্সট
                     Text(
                       _titles[index],
                       style: TextStyle(

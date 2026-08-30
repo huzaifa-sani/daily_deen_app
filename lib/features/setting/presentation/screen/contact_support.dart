@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:untitled/component/button/common_button.dart';
 import 'package:untitled/utils/extensions/extension.dart';
-
 import '../../../../component/common_App_Bar/Common_App_Bar.dart';
 import '../../../../component/text/common_text.dart';
 import '../../../../component/text_field/common_text_field.dart';
@@ -11,6 +9,7 @@ import '../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../utils/constants/app_string.dart';
 
 class ContactSupport extends StatelessWidget {
+
   ContactSupport({super.key});
 
   final TextEditingController issueTitleController = TextEditingController();
@@ -19,13 +18,12 @@ class ContactSupport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /// App bar
+
       appBar: const CommonAppBar(
         title: AppString.contactSupport,
         showBackButton: true,
       ),
 
-      /// Body
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: Column(
@@ -47,8 +45,6 @@ class ContactSupport extends StatelessWidget {
               borderRadius: 30,
             ),
 
-            20.height,
-
             const CommonText(
               text: 'Description',
               fontSize: 15,
@@ -60,16 +56,13 @@ class ContactSupport extends StatelessWidget {
 
             CommonTextField(
               controller: descriptionController,
-              hintText: 'Please write the issue you have faced',
-              maxLines: 8,
-              paddingVertical: 16,
-              borderRadius: 16,
+              hintText: "Enter Your Description",
+              borderRadius: 30,
             ),
 
-            20.height,
+            10.height,
 
-            const CommonButton(titleText:'Submit',)
-
+            const CommonButton(titleText: "Bubmit Button"),
 
           ],
         ),

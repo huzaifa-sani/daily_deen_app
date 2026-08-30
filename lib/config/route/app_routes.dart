@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:untitled/features/profile/presentation/screen/language.dart';
 import 'package:untitled/features/setting/presentation/screen/account_Setting.dart';
 import 'package:untitled/features/setting/presentation/screen/contact_support.dart';
-import '../../component/dash_board_Screen/screen/dash_board_Screen.dart';
+import '../../component/dash_board/screen/dash_board_Screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -24,7 +24,6 @@ class AppRoutes {
   static const String splash = '/';
   static const String dashboard = '/dash_board_Screen.dart';
   static const String onboarding = '/onboarding_screen.dart';
-
   static const String signUp = '/sign_up_screen.dart';
   static const String verifyUser = '/verify_user.dart';
   static const String signIn = '/sign_in_screen.dart';
@@ -48,7 +47,6 @@ class AppRoutes {
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: dashboard, page: () => DashboardScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
-
     GetPage(name: signUp, page: () => SignUpScreen()),
     GetPage(name: language, page: () => Language()),
     GetPage(name: verifyUser, page: () => const VerifyUser()),

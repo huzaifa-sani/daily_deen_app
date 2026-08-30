@@ -5,6 +5,7 @@ import '../../../../component/text/common_text.dart';
 import '../../../../utils/constants/app_colors.dart';
 
 class CommonLanguageTile extends StatelessWidget {
+
   const CommonLanguageTile({
     super.key,
     required this.flagAsset,
