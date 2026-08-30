@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/utils/constants/app_icons.dart';
+import 'package:untitled/utils/constants/app_images.dart';
 import '../../../../../../../config/route/app_routes.dart';
 import '../../../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../component/button/common_button.dart';
+import '../../../../../component/button/social_Login_Button.dart';
 import '../../../../../component/text/common_text.dart';
 import '../../../../../component/text_field/common_text_field.dart';
 import '../../../../../utils/helpers/validation.dart';
@@ -41,60 +44,64 @@ class SignInScreen extends StatelessWidget {
                     bottom: 20,
                     top: 36,
                   ),
+                  //
+                  // /// Account Email Input here
+                  // const CommonText(text: AppString.email, bottom: 8),
+                  // CommonTextField(
+                  //   controller: controller.emailController,
+                  //   hintText: AppString.email,
+                  //   validator: AppValidation.email,
+                  // ),
+                  //
+                  // /// Account Password Input here
+                  // const CommonText(
+                  //   text: AppString.password,
+                  //   bottom: 8,
+                  //   top: 24,
+                  // ),
+                  // CommonTextField(
+                  //   controller: controller.passwordController,
+                  //   isPassword: true,
+                  //   hintText: AppString.password,
+                  //   validator: AppValidation.password,
+                  // ),
+                  //
+                  // /// Forget Password Button here
+                  // Align(
+                  //   alignment: .centerRight,
+                  //   child: GestureDetector(
+                  //     onTap: () => Get.toNamed(AppRoutes.forgotPassword),
+                  //     child: const CommonText(
+                  //       text: AppString.forgotThePassword,
+                  //       top: 10,
+                  //       bottom: 30,
+                  //       color: AppColors.primaryColor,
+                  //       fontSize: 16,
+                  //       fontWeight: .w600,
+                  //     ),
+                  //   ),
+                  // ),
 
-                  /// Account Email Input here
-                  const CommonText(text: AppString.email, bottom: 8),
-                  CommonTextField(
-                    controller: controller.emailController,
-                    hintText: AppString.email,
-                    validator: AppValidation.email,
-                  ),
 
-                  /// Account Password Input here
-                  const CommonText(
-                    text: AppString.password,
-                    bottom: 8,
-                    top: 24,
-                  ),
-                  CommonTextField(
-                    controller: controller.passwordController,
-                    isPassword: true,
-                    hintText: AppString.password,
-                    validator: AppValidation.password,
-                  ),
-
-                  /// Forget Password Button here
-                  Align(
-                    alignment: .centerRight,
-                    child: GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.forgotPassword),
-                      child: const CommonText(
-                        text: AppString.forgotThePassword,
-                        top: 10,
-                        bottom: 30,
-                        color: AppColors.primaryColor,
-                        fontSize: 16,
-                        fontWeight: .w600,
-                      ),
-                    ),
-                  ),
-
-                  /// Submit Button here
-                  CommonButton(
-                    titleText: AppString.signIn,
-                    isLoading: controller.isLoading,
+                  SocialLoginButton(
+                    title: 'Continue with Google',
+                    icon:AppImages.noImage,
                     onTap: () {
-                      if (!_formKey.currentState!.validate()) {
-                        return;
-                      }
-                      controller.signInUser();
+                      // Google login
                     },
                   ),
-                  30.height,
 
-                  /// Account Creating Instruction here
-                  const DoNotHaveAccount(),
-                  30.height,
+
+                  10.height,
+
+
+                  SocialLoginButton(
+                    title: 'Continue with Apple',
+                    icon:AppImages.noImage,
+                    onTap: () {
+                      // Google login
+                    },
+                  ),
                 ],
               ),
             ),
