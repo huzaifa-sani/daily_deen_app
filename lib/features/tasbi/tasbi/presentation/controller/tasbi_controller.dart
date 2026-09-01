@@ -65,3 +65,6 @@ class TasbiController extends GetxController {
     isHapticOn.value = !isHapticOn.value;
   }
 }
+
+class DhikrModel {
+}
