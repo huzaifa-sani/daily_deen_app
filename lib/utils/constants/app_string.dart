@@ -108,6 +108,9 @@ class AppString {
 
   static const String learnHowWeCollectUseAndProtectYourInformation = 'Learn how we collect, use, and protect your information.';
 
+  static const String reset = 'Reset';
+  static const String tapToCount = 'Tap to count';
+
 
 
 

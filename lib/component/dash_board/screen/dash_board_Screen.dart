@@ -4,13 +4,14 @@ import 'package:untitled/features/profile/presentation/screen/profile_screen.dar
 import 'package:untitled/features/message/presentation/screen/chat_screen.dart';
 import 'package:untitled/component/bottom_nav_bar/common_bottom_bar.dart';
 
+import 'package:untitled/features/tasbi/tasbi/presentation/screen/tasbi_screen.dart';
 import '../controller/dashboard_controller.dart';
 
 class DashboardScreen extends GetView<DashboardController> {
   const DashboardScreen({super.key});
 
   final List<Widget> screens = const [
-    Center(child: Text("Notifications Screen")),
+    TasbiScreen(),
     Center(child: Text("Notifications Screen")),
     ChatListScreen(),
     ProfileScreen(),
@@ -19,11 +20,11 @@ class DashboardScreen extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(
-        () => IndexedStack(
-          index: controller.currentIndex.value,
-          children: screens,
-        ),
+      extendBody: true,
+      body: PageView(
+        controller: controller.pageController,
+        onPageChanged: controller.onPageChanged,
+        children: screens,
       ),
       bottomNavigationBar: Obx(
         () => CommonBottomNavBar(
@@ -34,6 +35,7 @@ class DashboardScreen extends GetView<DashboardController> {
     );
   }
 }
+
 
 
 
